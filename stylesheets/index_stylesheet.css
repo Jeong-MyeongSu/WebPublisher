@@ -1,0 +1,444 @@
+/* 라즈베리 파이보다 작은 기기 */
+@media screen and (max-height : 479px)
+{
+  body
+  {
+    margin : 0;
+    padding : 0;
+    font-family : sans-serif;
+    background : #53cbf1;
+  }
+  ul{
+    position : absolute;
+    top : 75%;
+    left : 50%;
+    transform : translate(-50%, -50%);
+    margin : 0;
+    padding : 20px;
+    background : #fff;
+    display : flex;
+    border-radius : 10px;
+    box-shadow : 0 10px 30px rgba(0,0,0,.3);
+
+  }
+  ul li
+  {
+      list-style : none;
+      text-align : center;
+      display : block;
+      border-right : 1px solid rgba(0,0,0,0.2);
+  }
+  ul li:last-child
+  {
+      border-right : none;
+  }
+  ul li a
+  {
+    text-decoration : none;
+    padding : 0 50px;
+    display : block;
+  }
+  ul li a .icon
+  {
+    width : 40px;
+    height : 40px;
+    text-align : center;
+    overflow : hidden;
+    margin : 0 auto 10px;
+  }
+  ul li a .icon .fas
+  {
+      width : 100%;
+      height : 100%;
+      line-height : 40px;
+      font-size : 32px;
+      transition : 0.5s;
+      color : #000;
+  }
+  ul li a .icon .fas:last-child
+  {
+    color : #e91e63;
+  }
+  ul li a:hover .icon .fas
+  {
+    transform : translateY(-100%);
+  }
+  ul li a .name
+  {
+    position : relative;
+    height : 20px;
+    width : 100%;
+    display : block;
+    overflow : hidden;
+  }
+  ul li a .name span
+  {
+      display : block;
+      position : relative;
+      color : #000;
+      font-size : 16px;
+      line-height : 20px;
+      transition : 0.5s;
+
+  }
+  ul li a .name span:before
+  {
+    content : attr(data-text);
+    position : absolute;
+    top : -100%;
+    left : 0;
+    width : 100%;
+    height : 100%;
+    color : #e91e63;
+  }
+  ul li a:hover .name span
+  {
+    transform : translateY(20px);
+  }
+  #profile
+  {
+    position : absolute;
+    top : 30%;
+    left : 50%;
+    transform : translate(-50%, -50%);
+    width : 160px;
+    height : 160px;
+    background : #fff;
+    display : flex;
+    border-radius : 300px;
+    overflow : hidden;
+  }
+  #profile img
+  {
+    width : 300px;
+    height : 300px;
+    transition : 0.5s;
+  }
+  .Std_number{
+    font-size: 12px;
+    height : 30px;
+
+  }
+  .Std_name{
+    font-size: 20px;
+    height : 40px;
+    display : inline-block;
+
+  }
+  .User_info{
+    position : absolute;
+    width : 150px;
+    top : 55%;
+    left : 50%;
+    transform : translate(-50%, -50%);
+    text-align: center;
+
+  }
+
+  p
+  {
+      margin : 0;
+      line-height : 30px;
+
+  }
+  .logout
+  {
+    display : inline-block;
+  }
+}
+/* 라즈베리 파이*/
+@media screen and (min-height : 480px) and (max-height : 599px)
+{
+  body
+  {
+    margin : 0;
+    padding : 0;
+    font-family : sans-serif;
+    background : #53cbf1;
+  }
+  ul{
+    position : absolute;
+    top : 75%;
+    left : 50%;
+    transform : translate(-50%, -50%);
+    margin : 0;
+    padding : 20px;
+    background : #fff;
+    display : flex;
+    border-radius : 10px;
+    box-shadow : 0 10px 30px rgba(0,0,0,.3);
+
+  }
+  ul li
+  {
+      list-style : none;
+      text-align : center;
+      display : block;
+      border-right : 1px solid rgba(0,0,0,0.2);
+  }
+  ul li:last-child
+  {
+      border-right : none;
+  }
+  ul li a
+  {
+    text-decoration : none;
+    padding : 0 50px;
+    display : block;
+  }
+  ul li a .icon
+  {
+    width : 40px;
+    height : 40px;
+    text-align : center;
+    overflow : hidden;
+    margin : 0 auto 10px;
+  }
+  ul li a .icon .fas
+  {
+      width : 100%;
+      height : 100%;
+      line-height : 40px;
+      font-size : 32px;
+      transition : 0.5s;
+      color : #000;
+  }
+  ul li a .icon .fas:last-child
+  {
+    color : #e91e63;
+  }
+  ul li a:hover .icon .fas
+  {
+    transform : translateY(-100%);
+  }
+  ul li a .name
+  {
+    position : relative;
+    height : 20px;
+    width : 100%;
+    display : block;
+    overflow : hidden;
+  }
+  ul li a .name span
+  {
+      display : block;
+      position : relative;
+      color : #000;
+      font-size : 16px;
+      line-height : 20px;
+      transition : 0.5s;
+
+  }
+  ul li a .name span:before
+  {
+    content : attr(data-text);
+    position : absolute;
+    top : -100%;
+    left : 0;
+    width : 100%;
+    height : 100%;
+    color : #e91e63;
+  }
+  ul li a:hover .name span
+  {
+    transform : translateY(20px);
+  }
+  #profile
+  {
+    position : absolute;
+    top : 30%;
+    left : 50%;
+    transform : translate(-50%, -50%);
+    width : 180px;
+    height : 180px;
+    background : #fff;
+    display : flex;
+    border-radius : 300px;
+    overflow : hidden;
+  }
+  #profile img
+  {
+    width : 300px;
+    height : 300px;
+    transition : 0.5s;
+  }
+  .Std_number{
+    font-size: 15px;
+    height : 30px;
+
+  }
+  .Std_name{
+    font-size: 25px;
+    height : 40px;
+    display : inline-block;
+
+  }
+  .User_info{
+    position : absolute;
+    width : 150px;
+    top : 55%;
+    left : 50%;
+    transform : translate(-50%, -50%);
+    text-align: center;
+
+  }
+
+  p
+  {
+      margin : 0;
+      line-height : 30px;
+
+  }
+  .logout
+  {
+    display : inline-block;
+  }
+}
+/* 라즈베리 파이보다 큰기기 */
+@media screen and (min-height : 600px)
+{
+  body
+  {
+    margin : 0;
+    padding : 0;
+    font-family : sans-serif;
+    background : #53cbf1;
+  }
+  ul{
+    position : absolute;
+    top : 75%;
+    left : 50%;
+    transform : translate(-50%, -50%);
+    margin : 0;
+    padding : 20px;
+    background : #fff;
+    display : flex;
+    border-radius : 10px;
+    box-shadow : 0 10px 30px rgba(0,0,0,.3);
+
+  }
+  ul li
+  {
+      list-style : none;
+      text-align : center;
+      display : block;
+      border-right : 1px solid rgba(0,0,0,0.2);
+  }
+  ul li:last-child
+  {
+      border-right : none;
+  }
+  ul li a
+  {
+    text-decoration : none;
+    padding : 0 50px;
+    display : block;
+  }
+  ul li a .icon
+  {
+    width : 40px;
+    height : 40px;
+    text-align : center;
+    overflow : hidden;
+    margin : 0 auto 10px;
+  }
+  ul li a .icon .fas
+  {
+      width : 100%;
+      height : 100%;
+      line-height : 40px;
+      font-size : 32px;
+      transition : 0.5s;
+      color : #000;
+  }
+  ul li a .icon .fas:last-child
+  {
+    color : #e91e63;
+  }
+  ul li a:hover .icon .fas
+  {
+    transform : translateY(-100%);
+  }
+  ul li a .name
+  {
+    position : relative;
+    height : 20px;
+    width : 100%;
+    display : block;
+    overflow : hidden;
+  }
+  ul li a .name span
+  {
+      display : block;
+      position : relative;
+      color : #000;
+      font-size : 16px;
+      line-height : 20px;
+      transition : 0.5s;
+
+  }
+  ul li a .name span:before
+  {
+    content : attr(data-text);
+    position : absolute;
+    top : -100%;
+    left : 0;
+    width : 100%;
+    height : 100%;
+    color : #e91e63;
+  }
+  ul li a:hover .name span
+  {
+    transform : translateY(20px);
+  }
+  #profile
+  {
+    position : absolute;
+    top : 30%;
+    left : 50%;
+    transform : translate(-50%, -50%);
+    width : 200px;
+    height : 200px;
+    background : #fff;
+    display : flex;
+    border-radius : 300px;
+    overflow : hidden;
+  }
+  #profile img
+  {
+    width : 300px;
+    height : 300px;
+    transition : 0.5s;
+  }
+  .Std_number{
+    font-size: 15px;
+    height : 30px;
+
+  }
+  .Std_name{
+    font-size: 25px;
+    height : 40px;
+    display : inline-block;
+
+  }
+  .User_info{
+    position : absolute;
+    width : 150px;
+    top : 55%;
+    left : 50%;
+    transform : translate(-50%, -50%);
+    text-align: center;
+
+  }
+
+  p
+  {
+      margin : 0;
+      line-height : 30px;
+
+  }
+  .logout
+  {
+    display : inline-block;
+  }
+}

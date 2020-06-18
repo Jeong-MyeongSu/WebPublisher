@@ -1,0 +1,384 @@
+/* 라즈베리 파이보다 작은 기기 */
+@media screen and (max-height : 479px)
+{
+  * {
+    margin : 0;
+    padding : 0;
+  }
+  body
+  {
+      overflow-x : hidden;
+      overflow-y : hidden;
+  }
+  #grid
+  {
+    display : grid;
+    grid-template-rows: 1fr 1fr 1fr;
+  }
+  #head
+  {
+    background : #A9D0F5;
+    padding : 10px 20px;
+
+  }
+  #nav
+  {
+
+    padding : 20px 20px;
+    margin : 0px 50px;
+  }
+  #section
+  {
+    position : relative;
+    overflow-x : hidden;
+    overflow-y : scroll;
+    white-space : nowrap;
+    height : 250px;
+    padding : 10px 20px;
+    margin : 0px 50px;
+  }
+  ::-webkit-scrollbar{
+      width :8px;
+
+  }
+  ::-webkit-scrollbar-thumb{
+    border-radius : 10px;
+    background-color:#a6a6a6;
+    box-shadow : inset 0 0 6px rgba(0,0,0,.3);
+  }
+  ::-webkit-scrollbar-track{
+    border-radius : 10px;
+    background-color:white;
+    box-shadow : inset 0 0 6px rgba(0,0,0,.3);
+  }
+  #backspace
+  {
+    display : inline-block;
+    height : 40px;
+    width : 40px;
+  }
+  #backspace i
+  {
+    font-size : 40px;
+    color : white;
+  }
+  h1
+  {
+    color : white;
+    font-size : 40px;
+    display : inline-block;
+    padding : 0px 20px;
+  }
+  #checkbox
+  {
+    display : inline-block;
+  }
+  .search
+  {
+    display : inline-block;
+
+  }
+  #btn_set
+  {
+    padding-left : 10px;
+  }
+  .button
+  {
+    width : 60px;
+    height : 35px;
+    color: #606060;
+    border: solid 1px #b7b7b7;
+    background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#ededed));
+    background: -moz-linear-gradient(top, #fff, #ededed);
+    display: inline-block;
+    vertical-align: baseline;
+    margin: 0 6px;
+    outline: none;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    font: 14px/100% Arial, Helvetica, sans-serif;
+    text-shadow: 0 1px 1px rgba(0,0,0,.3);
+    border-radius: .5em;
+    box-shadow: 0 1px 2px rgba(0,0,0,.2);
+  }
+
+  table
+  {
+      width : 100%;
+      border-collapse: collapse;
+      border-top : 1px solid #aaa;
+
+  }
+  th, td
+  {
+      text-align : left;
+      padding : 5px 5px;
+      margin : 0;
+  }
+  td
+  {
+    height : 30px;
+  }
+  tr
+  {
+    border-bottom : 1px solid #aaa;
+  }
+
+}
+/* 라즈베리 파이*/
+@media screen and (min-height : 480px) and (max-height : 599px)
+{
+
+* {
+  margin : 0;
+  padding : 0;
+}
+body
+{
+    overflow-x : hidden;
+    overflow-y : hidden;
+}
+#grid
+{
+  display : grid;
+  grid-template-rows: 1fr 1fr 8fr;
+}
+#head
+{
+  background : #A9D0F5;
+  padding : 10px 20px;
+
+}
+#nav
+{
+
+  padding : 20px 20px;
+  margin : 0px 50px;
+}
+#section
+{
+  position : relative;
+  overflow-x : hidden;
+  overflow-y : scroll;
+  white-space : nowrap;
+  height : 280px;
+  padding : 10px 20px;
+  margin : 0px 50px;
+}
+::-webkit-scrollbar{
+    width :8px;
+
+}
+::-webkit-scrollbar-thumb{
+  border-radius : 10px;
+  background-color:#a6a6a6;
+  box-shadow : inset 0 0 6px rgba(0,0,0,.3);
+}
+::-webkit-scrollbar-track{
+  border-radius : 10px;
+  background-color:white;
+  box-shadow : inset 0 0 6px rgba(0,0,0,.3);
+}
+#backspace
+{
+  display : inline-block;
+  height : 40px;
+  width : 40px;
+}
+#backspace i
+{
+  font-size : 40px;
+  color : white;
+}
+h1
+{
+  color : white;
+  font-size : 40px;
+  display : inline-block;
+  padding : 0px 20px;
+}
+#checkbox
+{
+  display : inline-block;
+}
+.search
+{
+  display : inline-block;
+
+}
+#btn_set
+{
+  padding-left : 10px;
+}
+.button
+{
+  width : 60px;
+  height : 35px;
+  color: #606060;
+  border: solid 1px #b7b7b7;
+  background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#ededed));
+  background: -moz-linear-gradient(top, #fff, #ededed);
+  display: inline-block;
+  vertical-align: baseline;
+  margin: 0 6px;
+  outline: none;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  font: 14px/100% Arial, Helvetica, sans-serif;
+  text-shadow: 0 1px 1px rgba(0,0,0,.3);
+  border-radius: .5em;
+  box-shadow: 0 1px 2px rgba(0,0,0,.2);
+}
+
+table
+{
+    width : 100%;
+    border-collapse: collapse;
+    border-top : 1px solid #aaa;
+
+}
+th, td
+{
+    text-align : left;
+    padding : 5px 5px;
+    margin : 0;
+}
+td
+{
+  height : 30px;
+}
+tr
+{
+  border-bottom : 1px solid #aaa;
+}
+}
+/* 라즈베리 파이보다 큰기기 */
+@media screen and (min-height : 600px)
+{
+
+* {
+  margin : 0;
+  padding : 0;
+}
+body
+{
+    overflow-x : hidden;
+    overflow-y : hidden;
+}
+#grid
+{
+  display : grid;
+  grid-template-rows: 1fr 1fr 8fr;
+}
+#head
+{
+  background : #A9D0F5;
+  padding : 10px 20px;
+
+}
+#nav
+{
+
+  padding : 20px 20px;
+  margin : 0px 50px;
+}
+#section
+{
+  position : relative;
+  overflow-x : hidden;
+  overflow-y : scroll;
+  white-space : nowrap;
+  height : 600px;
+  padding : 10px 20px;
+  margin : 0px 50px;
+}
+::-webkit-scrollbar{
+    width :8px;
+
+}
+::-webkit-scrollbar-thumb{
+  border-radius : 10px;
+  background-color:#a6a6a6;
+  box-shadow : inset 0 0 6px rgba(0,0,0,.3);
+}
+::-webkit-scrollbar-track{
+  border-radius : 10px;
+  background-color:white;
+  box-shadow : inset 0 0 6px rgba(0,0,0,.3);
+}
+#backspace
+{
+  display : inline-block;
+  height : 40px;
+  width : 40px;
+}
+#backspace i
+{
+  font-size : 40px;
+  color : white;
+}
+h1
+{
+  color : white;
+  font-size : 40px;
+  display : inline-block;
+  padding : 0px 20px;
+}
+#checkbox
+{
+  display : inline-block;
+}
+.search
+{
+  display : inline-block;
+
+}
+#btn_set
+{
+  padding-left : 10px;
+}
+.button
+{
+  width : 60px;
+  height : 35px;
+  color: #606060;
+  border: solid 1px #b7b7b7;
+  background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#ededed));
+  background: -moz-linear-gradient(top, #fff, #ededed);
+  display: inline-block;
+  vertical-align: baseline;
+  margin: 0 6px;
+  outline: none;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  font: 14px/100% Arial, Helvetica, sans-serif;
+  text-shadow: 0 1px 1px rgba(0,0,0,.3);
+  border-radius: .5em;
+  box-shadow: 0 1px 2px rgba(0,0,0,.2);
+}
+
+table
+{
+    width : 100%;
+    border-collapse: collapse;
+    border-top : 1px solid #aaa;
+
+}
+th, td
+{
+    text-align : left;
+    padding : 5px 5px;
+    margin : 0;
+}
+td
+{
+  height : 30px;
+}
+tr
+{
+  border-bottom : 1px solid #aaa;
+}
+}

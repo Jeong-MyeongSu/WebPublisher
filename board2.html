@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>whiteboard</title>
+  <meta charset="utf-8">
+  <!-- 모바일 확대 방지 -->
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0, user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/solid.css" integrity="sha384-QokYePQSOwpBDuhlHOsX0ymF6R/vLk/UQVz3WHa6wygxI5oGTmDTv8wahFOSspdm" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/regular.css" integrity="sha384-FKw7x8fCxuvzBwOJmhTJJsKzBl8dnN9e2R4+pXRfYoHivikuHkzWyhKWDSMcGNK8" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/brands.css" integrity="sha384-n9+6/aSqa9lBidZMRCQHTHKJscPq6NW4pCQBiMmHdUCvPN8ZOg2zJJTkC7WIezWv" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/fontawesome.css" integrity="sha384-vd1e11sR28tEK9YANUtpIOdjGW14pS87bUBuOIoBILVWLFnS+MCX9T6MMf0VdPGq" crossorigin="anonymous">
+  <link rel="stylesheet" href="stylesheets/board_stylesheet2.css" />
+
+  <script>
+    var user_type = "student";  // board_menu.js & board_drawing.js에서 사용
+  </script>
+  <!-- <script src="/socket.io/socket.io.js"></script> -->
+  <script src="js/board_menu2.js"></script>
+  <script src="js/p5.js"></script>
+  <script src="js/p5.sound.js"></script>
+  <!-- <script src="js/board_drawing.js"></script> -->
+  <!-- 컴퓨터비전 -->
+  <script>
+  var mic, recorder, soundFile;
+
+  /* MousePressed will increment forrm Record, to stop, to play */
+  var state = 0;
+
+  function setup(){
+    createCanvas(500,50);
+    background(255);
+    fill(0);
+
+
+    /* Create an audio in.*/
+    mic = new p5.AudioIn();
+
+    /* Users msut manually enable their browser microphone for recording to worrk properly. */
+    mic.start();
+
+    /* Create a sound recorder. */
+    recorder = new p5.SoundRecorder();
+
+    /* Create the mic to the recorder. */
+    recorder.setInput(mic);
+
+    /* create an empty sound file that we will use to playback the recording. */
+    soundFile = new p5.SoundFile();
+  }
+
+  function c1(){
+
+    document.getElementById("start").style.transform="scale(0)";
+
+  }
+
+  function c2(){
+    /* use hte '.enabled' boolean to make sure user enabled the mic (otherwise we'd record silence). */
+    if(state === 0 && mic.enabled){
+      /* Tell recorder to record to a p5.SoundFile whice we will use for play back. */
+      recorder.record(soundFile);
+      document.getElementById("stop").innerHTML='<i class="fas fa-stop-circle"></i>';
+      state++;
+    }
+    else if(state ===1){
+      /* stop recorder, and send the result to soundFile */
+      recorder.stop();
+      document.getElementById("stop").innerHTML='<i class="far fa-save"></i>';
+
+      state++;
+    }
+    else if(state ===2){
+      /* play the result */
+      /* soundFile.play(); */
+      saveSound(soundFile, 'sound.wav'); /*save file*/
+      state++;
+    }
+  }
+  </script>
+</head>
+<body>
+ <!--뒤로가기 버튼 -->
+  <a href="/bookcase">
+    <div class="home" id="home">
+      <i class="fas fa-arrow-left"></i>
+    </div>
+  </a>
+  <!--매뉴바 올리고 내리는버튼 -->
+  <div class="toggle" id="toggle" onclick="expand()" ontouchstart="expand()">
+    <i class="fas fa-plus" id="plus"></i>
+  </div>
+  <!--매뉴바 -->
+  <div class="menu_bar" id="menu_bar">
+    <div class="menu_bar_tools" id="menu_bar_tools">
+      <!--컬러매뉴 -->
+      <div id="colors" class="colors">
+        <div class="button2 color black"></div>
+        <div class="button2 color red"></div>
+        <div class="button2 color green"></div>
+        <div class="button2 color blue"></div>
+        <div class="button2 color yellow"></div>
+        <div class-"backspace" id="backspace" onclick="backspace1()" ontouchstart="backspace1()">
+          <i class="fas fa-arrow-left"></i>
+        </div>
+      </div>
+      <div class="button1 hide_button" id="color" onclick="expand2()" ontouchstart="expand2()"><i class="fas fa-palette"></i></div>
+      <!--크기 버튼 -->
+      <div id="widths" class="widths">
+        <div class="button3"><i class="fas fa-dice-one width 1"></i></div>
+        <div class="button3"><i class="fas fa-dice-two width 2"></i></div>
+        <div class="button3"><i class="fas fa-dice-three width 3"></i></div>
+        <div class="button3"><i class="fas fa-dice-four width 4"></i></div>
+        <div class="button3"><i class="fas fa-dice-five width 5"></i></div>
+        <div class-"backspace" id="backspace" onclick="backspace1()" ontouchstart="backspace1()">
+          <i class="fas fa-arrow-left"></i>
+        </div>
+      </div>
+      <div class="button1 hide_button" id="width" onclick="expand3()" ontouchstart="expand3()"><i class="fas fa-text-width"></i></div>
+      <!--팬, 지우개, 리셋 버튼 -->
+      <div id="tools" class="tools">
+        <div class="button4"><i class="fas fa-pen tool pen"></i></div>
+        <div class="button4"><i class="fas fa-eraser tool eraser"></i></div>
+        <div class="button4"><i class="fas fa-chalkboard tool clear"></i></div>
+        <div class-"backspace2" id="backspace2" onclick="backspace1()" ontouchstart="backspace1()">
+          <i class="fas fa-arrow-left"></i>
+        </div>
+      </div>
+      <div class="button1 hide_button" id="tool" onclick="expand4()" ontouchstart="expand4()"><i class="fas fa-edit"></i></div>
+      <!--학생, 교수님 판자 버튼 -->
+      <div id="owners" class='owners'>
+        <div class="button5"><i class="fas fa-user owner student"></i></div>
+        <div class="button5"><i class="fas fa-user-tie owner professor"></i></div>
+        <div class-"backspace2" id="backspace2" onclick="backspace1()" ontouchstart="backspace1()">
+          <i class="fas fa-arrow-left"></i>
+        </div>
+      </div>
+      <div class="button1 hide_button" id="owner" onclick="expand5()" ontouchstart="expand5()"><i class="fas fa-chalkboard-teacher"></i></div>
+    </div>
+    <div id="division1">
+    </div>
+    <div id="page_controls">
+      <div id="btn_set">
+        <button class="page_control btn_plus">+</button>
+        <button class="page_control btn_minus">-</button>
+      </div>
+      <div id="stud_canvas_list">
+        <canvas class="stud_canvas_element selected" width="1400" height="800" id="stud_1"></canvas>
+        <canvas class="stud_canvas_element selected" width="1400" height="800" id="stud_1"></canvas>
+        <canvas class="stud_canvas_element selected" width="1400" height="800" id="stud_1"></canvas>
+        <canvas class="stud_canvas_element selected" width="1400" height="800" id="stud_1"></canvas>
+        <canvas class="stud_canvas_element selected" width="1400" height="800" id="stud_1"></canvas>
+        
+
+
+
+
+      </div>
+    </div>
+    <div id="division2">
+    </div>
+    <div id="function_btn">
+      <div id="a"></div>
+      <div class="start" id="start" onclick="c1()">
+        <i class="fas fa-microphone-alt"></i>
+      </div>
+      <div class="stop" id="stop" onclick="c2()">
+        <i class="fas fa-play-circle"></i>
+      </div>
+      <div class="cloudup" id="cloudup" onclick="">
+        <i class="fas fa-cloud-upload-alt"></i>
+      </div>
+      <div class="clouddown" id="clouddown" onclick="">
+        <i class="fas fa-cloud-download-alt"></i>
+      </div>
+      <div class="question" id="question" onclick="">
+        <i class="fas fa-question"></i>
+      </div>
+
+    </div>
+    <div id="division3">
+    </div>
+  </div>
+</body>
+</html>

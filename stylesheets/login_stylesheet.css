@@ -1,0 +1,204 @@
+/* 라즈베리 파이보다 작은 기기 */
+@media screen and (max-height : 479px)
+{
+  *
+{
+  font-family : sans-serif;
+}
+
+body
+{
+    margin: 0 auto;
+}
+
+#back
+{
+  position : absolute;
+  width : 100%;
+  height : 100%;
+  background: radial-gradient(ellipse at center, #05abe0 0%,#53cbf1 60%,#87e0fd 100%);
+}
+#login
+{
+  position : absolute;
+  top : 50%;
+  left : 50%;
+  transform : translate(-50%, -50%);
+  width : 240px;
+  height : 320px;
+  box-sizing : border-box;
+  background : rgba(0,0,0,.6);
+  padding : 30px 35px;
+  box-shadow : 15px 15px 15px rgba(0,0,0,.6);
+}
+
+#login p
+{
+  margin : 0;
+  padding : 0;
+  color : azure;
+  margin-top : 25px;
+}
+
+#login input[type="text"],
+#login input[type="password"]
+{
+  width : 100%;
+  height : 40px;
+  background : transparent;
+  border : none;
+  border-bottom : 1px solid #fff;
+  color : #fff;
+  font-size : 11px;
+  outline : 0;
+}
+
+#login input[type="submit"]
+{
+  width : 100%;
+  margin-top : 25px;
+  padding : 10px;
+  border : 1px solid #fff;
+  border-radius : 20px;
+  background-color : #38BDED;
+  color : #fff;
+  font-size : 15px;
+  cursor : pointer; 
+}
+}
+/* 라즈베리 파이*/
+@media screen and (min-height : 480px) and (max-height : 599px)
+{
+  *
+{
+  font-family : sans-serif;
+}
+
+body
+{
+    margin: 0 auto;
+}
+
+#back
+{
+  position : absolute;
+  width : 100%;
+  height : 100%;
+  background: radial-gradient(ellipse at center, #05abe0 0%,#53cbf1 60%,#87e0fd 100%);
+}
+#login
+{
+  position : absolute;
+  top : 50%;
+  left : 50%;
+  transform : translate(-50%, -50%);
+  width : 380px;
+  height : 450px;
+  box-sizing : border-box;
+  background : rgba(0,0,0,.6);
+  padding : 70px 35px;
+  box-shadow : 15px 15px 15px rgba(0,0,0,.6);
+}
+
+#login p
+{
+  margin : 0;
+  padding : 0;
+  color : azure;
+  margin-top : 25px;
+}
+
+#login input[type="text"],
+#login input[type="password"]
+{
+  width : 100%;
+  height : 40px;
+  background : transparent;
+  border : none;
+  border-bottom : 1px solid #fff;
+  color : #fff;
+  font-size : 15px;
+  outline : 0;
+}
+
+#login input[type="submit"]
+{
+  width : 100%;
+  margin-top : 25px;
+  padding : 10px;
+  border : 1px solid #fff;
+  border-radius : 20px;
+  background-color : #38BDED;
+  color : #fff;
+  font-size : 15px;
+  cursor : pointer;
+}
+}
+/* 라즈베리 파이보다 큰기기 */
+@media screen and (min-height : 600px)
+{
+  *
+{
+  font-family : sans-serif;
+}
+
+body
+{
+    margin: 0 auto;
+}
+
+#back
+{
+  position : absolute;
+  width : 100%;
+  height : 100%;
+  background: radial-gradient(ellipse at center, #05abe0 0%,#53cbf1 60%,#87e0fd 100%);
+}
+#login
+{
+  position : absolute;
+  top : 50%;
+  left : 50%;
+  transform : translate(-50%, -50%);
+  width : 380px;
+  height : 450px;
+  box-sizing : border-box;
+  background : rgba(0,0,0,.6);
+  padding : 70px 35px;
+  box-shadow : 15px 15px 15px rgba(0,0,0,.6);
+}
+
+#login p
+{
+  margin : 0;
+  padding : 0;
+  color : azure;
+  margin-top : 25px;
+}
+
+#login input[type="text"],
+#login input[type="password"]
+{
+  width : 100%;
+  height : 40px;
+  background : transparent;
+  border : none;
+  border-bottom : 1px solid #fff;
+  color : #fff;
+  font-size : 15px;
+  outline : 0;
+}
+
+#login input[type="submit"]
+{
+  width : 100%;
+  margin-top : 25px;
+  padding : 10px;
+  border : 1px solid #fff;
+  border-radius : 20px;
+  background-color : #38BDED;
+  color : #fff;
+  font-size : 15px;
+  cursor : pointer;
+}
+}

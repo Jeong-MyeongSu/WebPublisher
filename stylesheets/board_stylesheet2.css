@@ -1,0 +1,2419 @@
+/* 라즈베리 파이보다 작은 기기 */
+@media screen and (max-width : 700px)
+{
+  /**
+  * Fix user-agent
+  */
+
+  * {
+    margin : 0;
+    padding : 0;
+  }
+
+  html, body {
+    height: 100%;
+    overscroll-behavior: contain; /* 모바일 크롬 pull-refresh 기능 차단 */
+    touch-action: pan-down; /* 모바일 크롬 pull-refresh 기능 차단 */
+  }
+
+  /**
+  * Canvas
+  */
+
+  #canvas_main {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    overflow:hidden;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+  }
+
+  .home
+  {
+    background : #2E9AFE;
+    height : 40px;
+    width : 40px;
+    position : fixed;
+    top : 5px;
+    left : 5px;
+    margin : auto;
+    text-align : center;
+    border-radius : 50%;
+    cursor : pointer;
+    z-index : 100;
+  }
+  .home i
+  {
+      font-size : 20px;
+      color : #ffffff;
+      display : block;
+      margin-top : 10px;
+  }
+  .toggle
+  {
+    background : #2E9AFE;
+    height : 100px;
+    width : 100px;
+    position : fixed;
+    bottom : 5px;
+    right : 5px;
+    margin : auto;
+    text-align : center;
+    border-radius : 50%;
+    cursor : pointer;
+    z-index : 100;
+  }
+  .toggle i{
+    font-size : 60px;
+    color : #ffffff;
+    display : block;
+    margin-top : 20px;
+    transition : 0.7s;
+  }
+  #menu_bar{
+
+    height : 110px;
+    width : 100%;
+    position : fixed;
+    bottom : -110px;
+    left : 0px;
+    background : #A9D0F5;
+    transition : 0.7s;
+  }
+  #menu_bar_tools{
+
+    height : 110px;
+    width : 120px;
+    position : fixed;
+
+
+  }
+  .menu_bar_tools .button1
+  {
+      display : inline-block;
+      position : absolute;
+      font-size : 36px;
+      color : #aaaaaa;
+      /*transition : 0.4s;*/
+  }
+  #color
+  {
+    left : 12px;
+  }
+  #width
+  {
+    left : 70px;
+  }
+  #tool
+  {
+    left : 12px;
+    top : 53px;
+  }
+  #owner
+  {
+    left :58px;
+    top : 53px;
+  }
+  .menu_bar_tools .button1:hover
+  {
+    color : #3498db;
+  }
+  #page_controls
+  {
+
+    height : 110px;
+    width : 300px;
+    position : fixed;
+
+    left : 120px;
+  }
+  #btn_set
+  {
+    position : absolute;
+    height : 110px;
+    width : 75px;
+
+  }
+  .btn_plus {
+    text-align: center;
+    padding: 6px 12px;
+    font-size: 20px;
+    width: 60px;
+    height: 40%;
+    position: absolute;
+    left: 5px;
+    top: 5px;
+    -moz-box-shadow:inset 0px 1px 0px 0px #dcecfb;
+  	-webkit-box-shadow:inset 0px 1px 0px 0px #dcecfb;
+  	box-shadow:inset 0px 1px 0px 0px #dcecfb;
+  	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #bddcfa), color-stop(1, #80b5ea));
+  	background:-moz-linear-gradient(top, #bddcfa 5%, #80b5ea 100%);
+  	background:-webkit-linear-gradient(top, #bddcfa 5%, #80b5ea 100%);
+  	background:-o-linear-gradient(top, #bddcfa 5%, #80b5ea 100%);
+  	background:-ms-linear-gradient(top, #bddcfa 5%, #80b5ea 100%);
+  	background:linear-gradient(to bottom, #bddcfa 5%, #80b5ea 100%);
+  	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#bddcfa', endColorstr='#80b5ea',GradientType=0);
+  	background-color:#bddcfa;
+  	-moz-border-radius:6px;
+  	-webkit-border-radius:6px;
+  	border-radius:6px;
+  	border:1px solid #84bbf3;
+  	display:inline-block;
+  	cursor:pointer;
+  	color:#ffffff;
+  	font-family:Arial;
+  	font-size:15px;
+  	font-weight:bold;
+  	padding:6px 24px;
+  	text-decoration:none;
+  	text-shadow:0px 1px 0px #528ecc;
+  }
+  .btn_minus {
+    text-align: center;
+    padding: 6px 12px;
+    font-size: 20px;
+    width: 60px;
+    height: 40%;
+    position: absolute;
+    left: 5px;
+    bottom: 5px;
+    border : 0px;
+    -moz-box-shadow:inset 0px 1px 0px 0px #dcecfb;
+  	-webkit-box-shadow:inset 0px 1px 0px 0px #dcecfb;
+  	box-shadow:inset 0px 1px 0px 0px #dcecfb;
+  	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #bddcfa), color-stop(1, #80b5ea));
+  	background:-moz-linear-gradient(top, #bddcfa 5%, #80b5ea 100%);
+  	background:-webkit-linear-gradient(top, #bddcfa 5%, #80b5ea 100%);
+  	background:-o-linear-gradient(top, #bddcfa 5%, #80b5ea 100%);
+  	background:-ms-linear-gradient(top, #bddcfa 5%, #80b5ea 100%);
+  	background:linear-gradient(to bottom, #bddcfa 5%, #80b5ea 100%);
+  	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#bddcfa', endColorstr='#80b5ea',GradientType=0);
+  	background-color:#bddcfa;
+  	-moz-border-radius:6px;
+  	-webkit-border-radius:6px;
+  	border-radius:6px;
+  	border:1px solid #84bbf3;
+  	display:inline-block;
+  	cursor:pointer;
+  	color:#ffffff;
+  	font-family:Arial;
+  	font-size:15px;
+  	font-weight:bold;
+  	padding:6px 24px;
+  	text-decoration:none;
+  	text-shadow:0px 1px 0px #528ecc;
+  }
+  #stud_canvas_list{
+    position : absolute;
+    height : 110px;
+    width : 220px;
+    left : 75px;
+    overflow-x : scroll;
+    overflow-y : hidden;
+    white-space: nowrap;
+  }
+
+  #division1{
+    display : block;
+    position : fixed;
+    bottom : -95px; left : 115px;
+    width : 1px; height : 80px;
+    border-left : 1px solid #aaaaaa;
+    content:'';
+
+  }
+  #division2{
+    display : block;
+    position : fixed;
+    bottom : -95px; left : 420px;
+    width : 1px; height : 80px;
+    border-left : 1px solid #aaaaaa;
+    content:'';
+    z-index : 101;
+  }
+  #division3{
+    display : block;
+    position : fixed;
+    bottom : -95px; left : 530px;
+    width : 1px; height : 80px;
+    border-left : 1px solid #aaaaaa;
+    content:'';
+    z-index : 101;
+  }
+
+
+  ::-webkit-scrollbar{
+      width :8px;
+
+  }
+  ::-webkit-scrollbar-thumb{
+    border-radius : 10px;
+    background-color:#a6a6a6;
+    box-shadow : inset 0 0 6px rgba(0,0,0,.3);
+  }
+  ::-webkit-scrollbar-track{
+    border-radius : 10px;
+    background-color:white;
+    box-shadow : inset 0 0 6px rgba(0,0,0,.3);
+  }
+
+
+  .stud_canvas_element {
+    width: 20%;
+    height: 90%;
+    margin : 2px;
+    background: white;
+    box-shadow: 2px 2px 2px rgba(0,0,0,0.2);
+  }
+
+  .selected {
+    border: 3px solid orange;
+  }
+  #function_btn{
+    position : fixed;
+    width : 110px;
+    height : 110px;
+
+
+    left : 420px;
+  }
+  .start
+  {
+    background : #2E9AFE;
+    height : 40px;
+    width : 40px;
+    position : absolute;
+    top : 10px;
+    left : 10px;
+    margin : auto;
+    text-align : center;
+    border-radius : 50%;
+    cursor : pointer;
+    z-index : 100;
+  }
+  .start i
+  {
+      font-size : 20px;
+      color : #ffffff;
+      display : block;
+      margin-top : 10px;
+
+  }
+  .stop
+  {
+    background : #2E9AFE;
+    height : 40px;
+    width : 40px;
+    position : absolute;
+    top : 10px;
+    left : 10px;
+    margin : auto;
+    text-align : center;
+    border-radius : 50%;
+    cursor : pointer;
+    z-index : 99;
+
+  }
+  .stop i
+  {
+    font-size : 20px;
+    color : #ffffff;
+    display : block;
+    margin-top : 10px;
+  }
+  .cloudup
+  {
+    background : #2E9AFE;
+    height : 40px;
+    width : 40px;
+    position : absolute;
+    top : 10px;
+    left : 60px;
+    margin : auto;
+    text-align : center;
+    border-radius : 50%;
+    cursor : pointer;
+    z-index : 100;
+  }
+  .cloudup i
+  {
+      font-size : 20px;
+      color : #ffffff;
+      display : block;
+      margin-top : 10px;
+
+  }
+  .clouddown
+  {
+    background : #2E9AFE;
+    height : 40px;
+    width : 40px;
+    position : absolute;
+    top : 60px;
+    left : 60px;
+    margin : auto;
+    text-align : center;
+    border-radius : 50%;
+    cursor : pointer;
+    z-index : 100;
+  }
+  .clouddown i
+  {
+      font-size : 20px;
+      color : #ffffff;
+      display : block;
+      margin-top : 10px;
+
+  }
+  .question
+  {
+    background : #2E9AFE;
+    height : 40px;
+    width : 40px;
+    position : absolute;
+    top : 60px;
+    left : 10px;
+    margin : auto;
+    text-align : center;
+    border-radius : 50%;
+    cursor : pointer;
+    z-index : 100;
+  }
+  .question i
+  {
+      font-size : 20px;
+      color : #ffffff;
+      display : block;
+      margin-top : 10px;
+
+  }
+  #color, #width, #tool, #owner
+  {
+    transition: 0.7s;
+  }
+  #colors
+  {
+    height : 110px;
+    width : 120px;
+    position : fixed;
+    bottom : -110px;
+    transition : 0.7s;
+  }
+  .button2.black
+   { background-color: black; top : 20px; left : 10px;}
+  .button2.red
+   { background-color: red; top : 20px; left : 45px; }
+  .button2.green
+   { background-color: green; top : 20px; left : 80px; }
+  .button2.blue
+   { background-color: blue; top : 70px; left : 10px;}
+  .button2.yellow
+   { background-color: yellow; top : 70px; left : 45px;}
+
+  .button2 {
+    display: inline-block;
+    position : absolute;
+    height: 30px;
+    width: 30px;
+    border-radius : 50%;
+    box-shadow : inset 0 0 6px rgba(0,0,0,.9);
+  }
+  #backspace
+  {
+    height : 30px;
+    width : 30px;
+    position :absolute;
+    top : 70px;
+    left : 80px;
+    text-align : center;
+    border-radius : 50%;
+    cursor : pointer;
+
+  }
+  #backspace i
+  {
+    font-size : 30px;
+    color : #aaaaaa;
+
+  }
+  .colors .button2:hover
+  {
+    background-color : #3498db;
+  }
+  #widths
+  {
+    height : 110px;
+    width : 120px;
+    position : fixed;
+    bottom : -110px;
+    transition : 0.7s;
+  }
+  .widths .button3
+  {
+    display : inline-block;
+    position : absolute;
+    font-size : 30px;
+    color : black;
+  }
+  .widths .button3:nth-child(1)
+  {
+    top : 15px; left : 10px;
+  }
+  .widths .button3:nth-child(2)
+  {
+    top : 15px; left : 45px;
+  }
+  .widths .button3:nth-child(3)
+  {
+    top : 15px; left : 80px;
+  }
+  .widths .button3:nth-child(4)
+  {
+    top : 65px; left : 10px;
+  }
+  .widths .button3:nth-child(5)
+  {
+    top : 65px; left : 45px;
+  }
+  .widths .button3:hover, .tools .button4:hover, #backspace2 i:hover, #backspace i:hover, .owners .button5:hover
+  {
+    color : #3498db;
+  }
+  #tools
+  {
+    height : 110px;
+    width : 120px;
+    position : fixed;
+    bottom : -110px;
+    transition : 0.7s;
+
+  }
+  .tools .button4
+  {
+    display : inline-block;
+    position : absolute;
+    font-size : 30px;
+    color : black;
+  }
+  .tools .button4:nth-child(1)
+  {
+    top : 10px; left : 15px;
+  }
+  .tools .button4:nth-child(2)
+  {
+    top : 10px; left : 65px;
+  }
+  .tools .button4:nth-child(3)
+  {
+    top : 60px; left : 15px;
+  }
+  #backspace2
+  {
+    height : 30px;
+    width : 30px;
+    position :absolute;
+    top : 65px;
+    left : 70px;
+    text-align : center;
+    border-radius : 50%;
+    cursor : pointer;
+
+  }
+  #backspace2 i
+  {
+    font-size : 30px;
+    color : #aaaaaa;
+  }
+
+  #owners
+  {
+    height : 110px;
+    width : 120px;
+    position : fixed;
+    bottom : -110px;
+    transition : 0.7s;
+    background : #A9D0F5;
+  }
+  .owners .button5
+  {
+    display : inline-block;
+    position : absolute;
+    font-size : 30px;
+    color : black;
+  }
+  .owners .button5:nth-child(1)
+  {
+    top : 10px; left : 15px;
+  }
+  .owners .button5:nth-child(2)
+  {
+    top : 10px; left : 65px;
+  }
+
+  /**
+  #prof_page{
+    height: 20%;
+    width: 80%;
+    background: #ccc;
+    position: fixed;
+    left: 20px;
+    bottom: -300px;
+    display: flex;
+    justify-content: space-between;
+    border: solid;
+    transition: .7s
+  }
+  #prof_canvas_list{
+    display: flex;
+    width: 85%;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    z-index: 1;
+  }
+  .prof_canvas_element {
+    width: 20%;
+    height: 90%;
+    margin: 5px;
+    background: white;
+    box-shadow: 2px 2px 2px rgba(0,0,0,0.2);
+  }
+
+  #stud_page{
+    height: 20%;
+    width: 80%;
+    background: #ccc;
+    position: fixed;
+    left: 20px;
+    bottom: -300px;
+    display: flex;
+    justify-content: space-between;
+    border: solid;
+    transition: .7s
+  }
+  #stud_canvas_list{
+    display: flex;
+    width: 85%;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    z-index: 1;
+  }
+  **/
+
+}
+/* 라즈베리 파이 */
+@media screen and (min-width : 701px) and (max-width : 800px)
+{
+  /**
+  * Fix user-agent
+  */
+
+  * {
+    margin : 0;
+    padding : 0;
+  }
+
+  html, body {
+    height: 100%;
+    overscroll-behavior: contain; /* 모바일 크롬 pull-refresh 기능 차단 */
+    touch-action: pan-down; /* 모바일 크롬 pull-refresh 기능 차단 */
+  }
+
+  /**
+  * Canvas
+  */
+
+  #canvas_main {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    overflow:hidden;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+  }
+
+  .home
+  {
+    background : #2E9AFE;
+    height : 40px;
+    width : 40px;
+    position : fixed;
+    top : 5px;
+    left : 5px;
+    margin : auto;
+    text-align : center;
+    border-radius : 50%;
+    cursor : pointer;
+    z-index : 100;
+  }
+  .home i
+  {
+      font-size : 20px;
+      color : #ffffff;
+      display : block;
+      margin-top : 10px;
+  }
+  .toggle
+  {
+    background : #2E9AFE;
+    height : 100px;
+    width : 100px;
+    position : fixed;
+    bottom : 5px;
+    right : 5px;
+    margin : auto;
+    text-align : center;
+    border-radius : 50%;
+    cursor : pointer;
+    z-index : 100;
+  }
+  .toggle i{
+    font-size : 60px;
+    color : #ffffff;
+    display : block;
+    margin-top : 20px;
+    transition : 0.7s;
+  }
+  #menu_bar{
+
+    height : 110px;
+    width : 100%;
+    position : fixed;
+    bottom : -110px;
+    left : 0px;
+    background : #A9D0F5;
+    transition : 0.7s;
+  }
+  #menu_bar_tools{
+
+    height : 110px;
+    width : 120px;
+    position : fixed;
+
+
+  }
+  .menu_bar_tools .button1
+  {
+      display : inline-block;
+      position : absolute;
+      font-size : 36px;
+      color : #aaaaaa;
+      /*transition : 0.4s;*/
+  }
+  #color
+  {
+    left : 12px;
+  }
+  #width
+  {
+    left : 70px;
+  }
+  #tool
+  {
+    left : 12px;
+    top : 53px;
+  }
+  #owner
+  {
+    left :58px;
+    top : 53px;
+  }
+  .menu_bar_tools .button1:hover
+  {
+    color : #3498db;
+  }
+  #page_controls
+  {
+
+    height : 110px;
+    width : 450px;
+    position : fixed;
+
+    left : 120px;
+  }
+  #btn_set
+  {
+    position : absolute;
+    height : 110px;
+    width : 75px;
+
+  }
+  .btn_plus {
+    text-align: center;
+    padding: 6px 12px;
+    font-size: 20px;
+    width: 60px;
+    height: 40%;
+    position: absolute;
+    left: 5px;
+    top: 5px;
+    -moz-box-shadow:inset 0px 1px 0px 0px #dcecfb;
+  	-webkit-box-shadow:inset 0px 1px 0px 0px #dcecfb;
+  	box-shadow:inset 0px 1px 0px 0px #dcecfb;
+  	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #bddcfa), color-stop(1, #80b5ea));
+  	background:-moz-linear-gradient(top, #bddcfa 5%, #80b5ea 100%);
+  	background:-webkit-linear-gradient(top, #bddcfa 5%, #80b5ea 100%);
+  	background:-o-linear-gradient(top, #bddcfa 5%, #80b5ea 100%);
+  	background:-ms-linear-gradient(top, #bddcfa 5%, #80b5ea 100%);
+  	background:linear-gradient(to bottom, #bddcfa 5%, #80b5ea 100%);
+  	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#bddcfa', endColorstr='#80b5ea',GradientType=0);
+  	background-color:#bddcfa;
+  	-moz-border-radius:6px;
+  	-webkit-border-radius:6px;
+  	border-radius:6px;
+  	border:1px solid #84bbf3;
+  	display:inline-block;
+  	cursor:pointer;
+  	color:#ffffff;
+  	font-family:Arial;
+  	font-size:15px;
+  	font-weight:bold;
+  	padding:6px 24px;
+  	text-decoration:none;
+  	text-shadow:0px 1px 0px #528ecc;
+  }
+  .btn_minus {
+    text-align: center;
+    padding: 6px 12px;
+    font-size: 20px;
+    width: 60px;
+    height: 40%;
+    position: absolute;
+    left: 5px;
+    bottom: 5px;
+    border : 0px;
+    -moz-box-shadow:inset 0px 1px 0px 0px #dcecfb;
+  	-webkit-box-shadow:inset 0px 1px 0px 0px #dcecfb;
+  	box-shadow:inset 0px 1px 0px 0px #dcecfb;
+  	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #bddcfa), color-stop(1, #80b5ea));
+  	background:-moz-linear-gradient(top, #bddcfa 5%, #80b5ea 100%);
+  	background:-webkit-linear-gradient(top, #bddcfa 5%, #80b5ea 100%);
+  	background:-o-linear-gradient(top, #bddcfa 5%, #80b5ea 100%);
+  	background:-ms-linear-gradient(top, #bddcfa 5%, #80b5ea 100%);
+  	background:linear-gradient(to bottom, #bddcfa 5%, #80b5ea 100%);
+  	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#bddcfa', endColorstr='#80b5ea',GradientType=0);
+  	background-color:#bddcfa;
+  	-moz-border-radius:6px;
+  	-webkit-border-radius:6px;
+  	border-radius:6px;
+  	border:1px solid #84bbf3;
+  	display:inline-block;
+  	cursor:pointer;
+  	color:#ffffff;
+  	font-family:Arial;
+  	font-size:15px;
+  	font-weight:bold;
+  	padding:6px 24px;
+  	text-decoration:none;
+  	text-shadow:0px 1px 0px #528ecc;
+  }
+  #stud_canvas_list{
+    position : absolute;
+    height : 110px;
+    width : 370px;
+    left : 75px;
+    overflow-x : scroll;
+    overflow-y : hidden;
+    white-space: nowrap;
+  }
+
+  #division1{
+    display : block;
+    position : fixed;
+    bottom : -95px; left : 115px;
+    width : 1px; height : 80px;
+    border-left : 1px solid #aaaaaa;
+    content:'';
+
+  }
+  #division2{
+    display : block;
+    position : fixed;
+    bottom : -95px; left : 570px;
+    width : 1px; height : 80px;
+    border-left : 1px solid #aaaaaa;
+    content:'';
+    z-index : 101;
+  }
+  #division3{
+    display : block;
+    position : fixed;
+    bottom : -95px; left : 680px;
+    width : 1px; height : 80px;
+    border-left : 1px solid #aaaaaa;
+    content:'';
+    z-index : 101;
+  }
+
+
+  ::-webkit-scrollbar{
+      width :8px;
+
+  }
+  ::-webkit-scrollbar-thumb{
+    border-radius : 10px;
+    background-color:#a6a6a6;
+    box-shadow : inset 0 0 6px rgba(0,0,0,.3);
+  }
+  ::-webkit-scrollbar-track{
+    border-radius : 10px;
+    background-color:white;
+    box-shadow : inset 0 0 6px rgba(0,0,0,.3);
+  }
+
+
+  .stud_canvas_element {
+    width: 20%;
+    height: 90%;
+    margin : 2px;
+    background: white;
+    box-shadow: 2px 2px 2px rgba(0,0,0,0.2);
+  }
+
+  .selected {
+    border: 3px solid orange;
+  }
+  #function_btn{
+    position : fixed;
+    width : 110px;
+    height : 110px;
+
+
+    left : 570px;
+  }
+  .start
+  {
+    background : #2E9AFE;
+    height : 40px;
+    width : 40px;
+    position : absolute;
+    top : 10px;
+    left : 10px;
+    margin : auto;
+    text-align : center;
+    border-radius : 50%;
+    cursor : pointer;
+    z-index : 100;
+  }
+  .start i
+  {
+      font-size : 20px;
+      color : #ffffff;
+      display : block;
+      margin-top : 10px;
+
+  }
+  .stop
+  {
+    background : #2E9AFE;
+    height : 40px;
+    width : 40px;
+    position : absolute;
+    top : 10px;
+    left : 10px;
+    margin : auto;
+    text-align : center;
+    border-radius : 50%;
+    cursor : pointer;
+    z-index : 99;
+
+  }
+  .stop i
+  {
+    font-size : 20px;
+    color : #ffffff;
+    display : block;
+    margin-top : 10px;
+  }
+  .cloudup
+  {
+    background : #2E9AFE;
+    height : 40px;
+    width : 40px;
+    position : absolute;
+    top : 10px;
+    left : 60px;
+    margin : auto;
+    text-align : center;
+    border-radius : 50%;
+    cursor : pointer;
+    z-index : 100;
+  }
+  .cloudup i
+  {
+      font-size : 20px;
+      color : #ffffff;
+      display : block;
+      margin-top : 10px;
+
+  }
+  .clouddown
+  {
+    background : #2E9AFE;
+    height : 40px;
+    width : 40px;
+    position : absolute;
+    top : 60px;
+    left : 60px;
+    margin : auto;
+    text-align : center;
+    border-radius : 50%;
+    cursor : pointer;
+    z-index : 100;
+  }
+  .clouddown i
+  {
+      font-size : 20px;
+      color : #ffffff;
+      display : block;
+      margin-top : 10px;
+
+  }
+  .question
+  {
+    background : #2E9AFE;
+    height : 40px;
+    width : 40px;
+    position : absolute;
+    top : 60px;
+    left : 10px;
+    margin : auto;
+    text-align : center;
+    border-radius : 50%;
+    cursor : pointer;
+    z-index : 100;
+  }
+  .question i
+  {
+      font-size : 20px;
+      color : #ffffff;
+      display : block;
+      margin-top : 10px;
+
+  }
+  #color, #width, #tool, #owner
+  {
+    transition: 0.7s;
+  }
+  #colors
+  {
+    height : 110px;
+    width : 120px;
+    position : fixed;
+    bottom : -110px;
+    transition : 0.7s;
+  }
+  .button2.black
+   { background-color: black; top : 20px; left : 10px;}
+  .button2.red
+   { background-color: red; top : 20px; left : 45px; }
+  .button2.green
+   { background-color: green; top : 20px; left : 80px; }
+  .button2.blue
+   { background-color: blue; top : 70px; left : 10px;}
+  .button2.yellow
+   { background-color: yellow; top : 70px; left : 45px;}
+
+  .button2 {
+    display: inline-block;
+    position : absolute;
+    height: 30px;
+    width: 30px;
+    border-radius : 50%;
+    box-shadow : inset 0 0 6px rgba(0,0,0,.9);
+  }
+  #backspace
+  {
+    height : 30px;
+    width : 30px;
+    position :absolute;
+    top : 70px;
+    left : 80px;
+    text-align : center;
+    border-radius : 50%;
+    cursor : pointer;
+
+  }
+  #backspace i
+  {
+    font-size : 30px;
+    color : #aaaaaa;
+
+  }
+  .colors .button2:hover
+  {
+    background-color : #3498db;
+  }
+  #widths
+  {
+    height : 110px;
+    width : 120px;
+    position : fixed;
+    bottom : -110px;
+    transition : 0.7s;
+  }
+  .widths .button3
+  {
+    display : inline-block;
+    position : absolute;
+    font-size : 30px;
+    color : black;
+  }
+  .widths .button3:nth-child(1)
+  {
+    top : 15px; left : 10px;
+  }
+  .widths .button3:nth-child(2)
+  {
+    top : 15px; left : 45px;
+  }
+  .widths .button3:nth-child(3)
+  {
+    top : 15px; left : 80px;
+  }
+  .widths .button3:nth-child(4)
+  {
+    top : 65px; left : 10px;
+  }
+  .widths .button3:nth-child(5)
+  {
+    top : 65px; left : 45px;
+  }
+  .widths .button3:hover, .tools .button4:hover, #backspace2 i:hover, #backspace i:hover, .owners .button5:hover
+  {
+    color : #3498db;
+  }
+  #tools
+  {
+    height : 110px;
+    width : 120px;
+    position : fixed;
+    bottom : -110px;
+    transition : 0.7s;
+
+  }
+  .tools .button4
+  {
+    display : inline-block;
+    position : absolute;
+    font-size : 30px;
+    color : black;
+  }
+  .tools .button4:nth-child(1)
+  {
+    top : 10px; left : 15px;
+  }
+  .tools .button4:nth-child(2)
+  {
+    top : 10px; left : 65px;
+  }
+  .tools .button4:nth-child(3)
+  {
+    top : 60px; left : 15px;
+  }
+  #backspace2
+  {
+    height : 30px;
+    width : 30px;
+    position :absolute;
+    top : 65px;
+    left : 70px;
+    text-align : center;
+    border-radius : 50%;
+    cursor : pointer;
+
+  }
+  #backspace2 i
+  {
+    font-size : 30px;
+    color : #aaaaaa;
+  }
+
+  #owners
+  {
+    height : 110px;
+    width : 120px;
+    position : fixed;
+    bottom : -110px;
+    transition : 0.7s;
+    background : #A9D0F5;
+  }
+  .owners .button5
+  {
+    display : inline-block;
+    position : absolute;
+    font-size : 30px;
+    color : black;
+  }
+  .owners .button5:nth-child(1)
+  {
+    top : 10px; left : 15px;
+  }
+  .owners .button5:nth-child(2)
+  {
+    top : 10px; left : 65px;
+  }
+
+  /**
+  #prof_page{
+    height: 20%;
+    width: 80%;
+    background: #ccc;
+    position: fixed;
+    left: 20px;
+    bottom: -300px;
+    display: flex;
+    justify-content: space-between;
+    border: solid;
+    transition: .7s
+  }
+  #prof_canvas_list{
+    display: flex;
+    width: 85%;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    z-index: 1;
+  }
+  .prof_canvas_element {
+    width: 20%;
+    height: 90%;
+    margin: 5px;
+    background: white;
+    box-shadow: 2px 2px 2px rgba(0,0,0,0.2);
+  }
+
+  #stud_page{
+    height: 20%;
+    width: 80%;
+    background: #ccc;
+    position: fixed;
+    left: 20px;
+    bottom: -300px;
+    display: flex;
+    justify-content: space-between;
+    border: solid;
+    transition: .7s
+  }
+  #stud_canvas_list{
+    display: flex;
+    width: 85%;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    z-index: 1;
+  }
+  **/
+
+}
+/* 라즈베리 파이보다 큰 기기 */
+@media screen and (min-width : 801px) and (max-width : 1219px)
+{
+  /**
+  * Fix user-agent
+  */
+
+  * {
+    margin : 0;
+    padding : 0;
+  }
+
+  html, body {
+    height: 100%;
+    overscroll-behavior: contain; /* 모바일 크롬 pull-refresh 기능 차단 */
+    touch-action: pan-down; /* 모바일 크롬 pull-refresh 기능 차단 */
+  }
+
+  /**
+  * Canvas
+  */
+
+  #canvas_main {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    overflow:hidden;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+  }
+
+  .home
+  {
+    background : #2E9AFE;
+    height : 40px;
+    width : 40px;
+    position : fixed;
+    top : 5px;
+    left : 5px;
+    margin : auto;
+    text-align : center;
+    border-radius : 50%;
+    cursor : pointer;
+    z-index : 100;
+  }
+  .home i
+  {
+      font-size : 20px;
+      color : #ffffff;
+      display : block;
+      margin-top : 10px;
+  }
+  .toggle
+  {
+    background : #2E9AFE;
+    height : 100px;
+    width : 100px;
+    position : fixed;
+    bottom : 5px;
+    right : 5px;
+    margin : auto;
+    text-align : center;
+    border-radius : 50%;
+    cursor : pointer;
+    z-index : 100;
+  }
+  .toggle i{
+    font-size : 60px;
+    color : #ffffff;
+    display : block;
+    margin-top : 20px;
+    transition : 0.7s;
+  }
+  #menu_bar{
+
+    height : 110px;
+    width : 100%;
+    position : fixed;
+    bottom : -110px;
+    left : 0px;
+    background : #A9D0F5;
+    transition : 0.7s;
+  }
+  #menu_bar_tools{
+
+    height : 110px;
+    width : 120px;
+    position : fixed;
+
+
+  }
+  .menu_bar_tools .button1
+  {
+      display : inline-block;
+      position : absolute;
+      font-size : 36px;
+      color : #aaaaaa;
+      /*transition : 0.4s;*/
+  }
+  #color
+  {
+    left : 12px;
+  }
+  #width
+  {
+    left : 70px;
+  }
+  #tool
+  {
+    left : 12px;
+    top : 53px;
+  }
+  #owner
+  {
+    left :58px;
+    top : 53px;
+  }
+  .menu_bar_tools .button1:hover
+  {
+    color : #3498db;
+  }
+  #page_controls
+  {
+
+    height : 110px;
+    width : 600px;
+    position : fixed;
+
+    left : 120px;
+  }
+  #btn_set
+  {
+    position : absolute;
+    height : 110px;
+    width : 75px;
+
+  }
+  .btn_plus {
+    text-align: center;
+    padding: 6px 12px;
+    font-size: 20px;
+    width: 60px;
+    height: 40%;
+    position: absolute;
+    left: 5px;
+    top: 5px;
+    -moz-box-shadow:inset 0px 1px 0px 0px #dcecfb;
+  	-webkit-box-shadow:inset 0px 1px 0px 0px #dcecfb;
+  	box-shadow:inset 0px 1px 0px 0px #dcecfb;
+  	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #bddcfa), color-stop(1, #80b5ea));
+  	background:-moz-linear-gradient(top, #bddcfa 5%, #80b5ea 100%);
+  	background:-webkit-linear-gradient(top, #bddcfa 5%, #80b5ea 100%);
+  	background:-o-linear-gradient(top, #bddcfa 5%, #80b5ea 100%);
+  	background:-ms-linear-gradient(top, #bddcfa 5%, #80b5ea 100%);
+  	background:linear-gradient(to bottom, #bddcfa 5%, #80b5ea 100%);
+  	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#bddcfa', endColorstr='#80b5ea',GradientType=0);
+  	background-color:#bddcfa;
+  	-moz-border-radius:6px;
+  	-webkit-border-radius:6px;
+  	border-radius:6px;
+  	border:1px solid #84bbf3;
+  	display:inline-block;
+  	cursor:pointer;
+  	color:#ffffff;
+  	font-family:Arial;
+  	font-size:15px;
+  	font-weight:bold;
+  	padding:6px 24px;
+  	text-decoration:none;
+  	text-shadow:0px 1px 0px #528ecc;
+  }
+  .btn_minus {
+    text-align: center;
+    padding: 6px 12px;
+    font-size: 20px;
+    width: 60px;
+    height: 40%;
+    position: absolute;
+    left: 5px;
+    bottom: 5px;
+    border : 0px;
+    -moz-box-shadow:inset 0px 1px 0px 0px #dcecfb;
+  	-webkit-box-shadow:inset 0px 1px 0px 0px #dcecfb;
+  	box-shadow:inset 0px 1px 0px 0px #dcecfb;
+  	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #bddcfa), color-stop(1, #80b5ea));
+  	background:-moz-linear-gradient(top, #bddcfa 5%, #80b5ea 100%);
+  	background:-webkit-linear-gradient(top, #bddcfa 5%, #80b5ea 100%);
+  	background:-o-linear-gradient(top, #bddcfa 5%, #80b5ea 100%);
+  	background:-ms-linear-gradient(top, #bddcfa 5%, #80b5ea 100%);
+  	background:linear-gradient(to bottom, #bddcfa 5%, #80b5ea 100%);
+  	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#bddcfa', endColorstr='#80b5ea',GradientType=0);
+  	background-color:#bddcfa;
+  	-moz-border-radius:6px;
+  	-webkit-border-radius:6px;
+  	border-radius:6px;
+  	border:1px solid #84bbf3;
+  	display:inline-block;
+  	cursor:pointer;
+  	color:#ffffff;
+  	font-family:Arial;
+  	font-size:15px;
+  	font-weight:bold;
+  	padding:6px 24px;
+  	text-decoration:none;
+  	text-shadow:0px 1px 0px #528ecc;
+  }
+  #stud_canvas_list{
+    position : absolute;
+    height : 110px;
+    width : 520px;
+    left : 75px;
+    overflow-x : scroll;
+    overflow-y : hidden;
+    white-space: nowrap;
+  }
+
+  #division1{
+    display : block;
+    position : fixed;
+    bottom : -95px; left : 115px;
+    width : 1px; height : 80px;
+    border-left : 1px solid #aaaaaa;
+    content:'';
+
+  }
+  #division2{
+    display : block;
+    position : fixed;
+    bottom : -95px; left : 720px;
+    width : 1px; height : 80px;
+    border-left : 1px solid #aaaaaa;
+    content:'';
+    z-index : 101;
+  }
+  #division3{
+    display : block;
+    position : fixed;
+    bottom : -95px; left : 830px;
+    width : 1px; height : 80px;
+    border-left : 1px solid #aaaaaa;
+    content:'';
+    z-index : 101;
+  }
+
+
+  ::-webkit-scrollbar{
+      width :8px;
+
+  }
+  ::-webkit-scrollbar-thumb{
+    border-radius : 10px;
+    background-color:#a6a6a6;
+    box-shadow : inset 0 0 6px rgba(0,0,0,.3);
+  }
+  ::-webkit-scrollbar-track{
+    border-radius : 10px;
+    background-color:white;
+    box-shadow : inset 0 0 6px rgba(0,0,0,.3);
+  }
+
+
+  .stud_canvas_element {
+    width: 20%;
+    height: 90%;
+    margin : 2px;
+    background: white;
+    box-shadow: 2px 2px 2px rgba(0,0,0,0.2);
+  }
+
+  .selected {
+    border: 3px solid orange;
+  }
+  #function_btn{
+    position : fixed;
+    width : 110px;
+    height : 110px;
+
+
+    left : 720px;
+  }
+  .start
+  {
+    background : #2E9AFE;
+    height : 40px;
+    width : 40px;
+    position : absolute;
+    top : 10px;
+    left : 10px;
+    margin : auto;
+    text-align : center;
+    border-radius : 50%;
+    cursor : pointer;
+    z-index : 100;
+  }
+  .start i
+  {
+      font-size : 20px;
+      color : #ffffff;
+      display : block;
+      margin-top : 10px;
+
+  }
+  .stop
+  {
+    background : #2E9AFE;
+    height : 40px;
+    width : 40px;
+    position : absolute;
+    top : 10px;
+    left : 10px;
+    margin : auto;
+    text-align : center;
+    border-radius : 50%;
+    cursor : pointer;
+    z-index : 99;
+
+  }
+  .stop i
+  {
+    font-size : 20px;
+    color : #ffffff;
+    display : block;
+    margin-top : 10px;
+  }
+  .cloudup
+  {
+    background : #2E9AFE;
+    height : 40px;
+    width : 40px;
+    position : absolute;
+    top : 10px;
+    left : 60px;
+    margin : auto;
+    text-align : center;
+    border-radius : 50%;
+    cursor : pointer;
+    z-index : 100;
+  }
+  .cloudup i
+  {
+      font-size : 20px;
+      color : #ffffff;
+      display : block;
+      margin-top : 10px;
+
+  }
+  .clouddown
+  {
+    background : #2E9AFE;
+    height : 40px;
+    width : 40px;
+    position : absolute;
+    top : 60px;
+    left : 60px;
+    margin : auto;
+    text-align : center;
+    border-radius : 50%;
+    cursor : pointer;
+    z-index : 100;
+  }
+  .clouddown i
+  {
+      font-size : 20px;
+      color : #ffffff;
+      display : block;
+      margin-top : 10px;
+
+  }
+  .question
+  {
+    background : #2E9AFE;
+    height : 40px;
+    width : 40px;
+    position : absolute;
+    top : 60px;
+    left : 10px;
+    margin : auto;
+    text-align : center;
+    border-radius : 50%;
+    cursor : pointer;
+    z-index : 100;
+  }
+  .question i
+  {
+      font-size : 20px;
+      color : #ffffff;
+      display : block;
+      margin-top : 10px;
+
+  }
+  #color, #width, #tool, #owner
+  {
+    transition: 0.7s;
+  }
+  #colors
+  {
+    height : 110px;
+    width : 120px;
+    position : fixed;
+    bottom : -110px;
+    transition : 0.7s;
+  }
+  .button2.black
+   { background-color: black; top : 20px; left : 10px;}
+  .button2.red
+   { background-color: red; top : 20px; left : 45px; }
+  .button2.green
+   { background-color: green; top : 20px; left : 80px; }
+  .button2.blue
+   { background-color: blue; top : 70px; left : 10px;}
+  .button2.yellow
+   { background-color: yellow; top : 70px; left : 45px;}
+
+  .button2 {
+    display: inline-block;
+    position : absolute;
+    height: 30px;
+    width: 30px;
+    border-radius : 50%;
+    box-shadow : inset 0 0 6px rgba(0,0,0,.9);
+  }
+  #backspace
+  {
+    height : 30px;
+    width : 30px;
+    position :absolute;
+    top : 70px;
+    left : 80px;
+    text-align : center;
+    border-radius : 50%;
+    cursor : pointer;
+
+  }
+  #backspace i
+  {
+    font-size : 30px;
+    color : #aaaaaa;
+
+  }
+  .colors .button2:hover
+  {
+    background-color : #3498db;
+  }
+  #widths
+  {
+    height : 110px;
+    width : 120px;
+    position : fixed;
+    bottom : -110px;
+    transition : 0.7s;
+  }
+  .widths .button3
+  {
+    display : inline-block;
+    position : absolute;
+    font-size : 30px;
+    color : black;
+  }
+  .widths .button3:nth-child(1)
+  {
+    top : 15px; left : 10px;
+  }
+  .widths .button3:nth-child(2)
+  {
+    top : 15px; left : 45px;
+  }
+  .widths .button3:nth-child(3)
+  {
+    top : 15px; left : 80px;
+  }
+  .widths .button3:nth-child(4)
+  {
+    top : 65px; left : 10px;
+  }
+  .widths .button3:nth-child(5)
+  {
+    top : 65px; left : 45px;
+  }
+  .widths .button3:hover, .tools .button4:hover, #backspace2 i:hover, #backspace i:hover, .owners .button5:hover
+  {
+    color : #3498db;
+  }
+  #tools
+  {
+    height : 110px;
+    width : 120px;
+    position : fixed;
+    bottom : -110px;
+    transition : 0.7s;
+
+  }
+  .tools .button4
+  {
+    display : inline-block;
+    position : absolute;
+    font-size : 30px;
+    color : black;
+  }
+  .tools .button4:nth-child(1)
+  {
+    top : 10px; left : 15px;
+  }
+  .tools .button4:nth-child(2)
+  {
+    top : 10px; left : 65px;
+  }
+  .tools .button4:nth-child(3)
+  {
+    top : 60px; left : 15px;
+  }
+  #backspace2
+  {
+    height : 30px;
+    width : 30px;
+    position :absolute;
+    top : 65px;
+    left : 70px;
+    text-align : center;
+    border-radius : 50%;
+    cursor : pointer;
+
+  }
+  #backspace2 i
+  {
+    font-size : 30px;
+    color : #aaaaaa;
+  }
+
+  #owners
+  {
+    height : 110px;
+    width : 120px;
+    position : fixed;
+    bottom : -110px;
+    transition : 0.7s;
+    background : #A9D0F5;
+  }
+  .owners .button5
+  {
+    display : inline-block;
+    position : absolute;
+    font-size : 30px;
+    color : black;
+  }
+  .owners .button5:nth-child(1)
+  {
+    top : 10px; left : 15px;
+  }
+  .owners .button5:nth-child(2)
+  {
+    top : 10px; left : 65px;
+  }
+
+  /**
+  #prof_page{
+    height: 20%;
+    width: 80%;
+    background: #ccc;
+    position: fixed;
+    left: 20px;
+    bottom: -300px;
+    display: flex;
+    justify-content: space-between;
+    border: solid;
+    transition: .7s
+  }
+  #prof_canvas_list{
+    display: flex;
+    width: 85%;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    z-index: 1;
+  }
+  .prof_canvas_element {
+    width: 20%;
+    height: 90%;
+    margin: 5px;
+    background: white;
+    box-shadow: 2px 2px 2px rgba(0,0,0,0.2);
+  }
+
+  #stud_page{
+    height: 20%;
+    width: 80%;
+    background: #ccc;
+    position: fixed;
+    left: 20px;
+    bottom: -300px;
+    display: flex;
+    justify-content: space-between;
+    border: solid;
+    transition: .7s
+  }
+  #stud_canvas_list{
+    display: flex;
+    width: 85%;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    z-index: 1;
+  }
+  **/
+
+}
+/* 라즈베리 파이보다 큰 기기2 */
+@media screen and (min-width : 1220px)
+{
+  /**
+  * Fix user-agent
+  */
+
+  * {
+    margin : 0;
+    padding : 0;
+  }
+
+  html, body {
+    height: 100%;
+    overscroll-behavior: contain; /* 모바일 크롬 pull-refresh 기능 차단 */
+    touch-action: pan-down; /* 모바일 크롬 pull-refresh 기능 차단 */
+  }
+
+  /**
+  * Canvas
+  */
+
+  #canvas_main {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    overflow:hidden;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+  }
+
+  .home
+  {
+    background : #2E9AFE;
+    height : 40px;
+    width : 40px;
+    position : fixed;
+    top : 5px;
+    left : 5px;
+    margin : auto;
+    text-align : center;
+    border-radius : 50%;
+    cursor : pointer;
+    z-index : 100;
+  }
+  .home i
+  {
+      font-size : 20px;
+      color : #ffffff;
+      display : block;
+      margin-top : 10px;
+  }
+  .toggle
+  {
+    background : #2E9AFE;
+    height : 100px;
+    width : 100px;
+    position : fixed;
+    bottom : 5px;
+    right : 5px;
+    margin : auto;
+    text-align : center;
+    border-radius : 50%;
+    cursor : pointer;
+    z-index : 100;
+  }
+  .toggle i{
+    font-size : 60px;
+    color : #ffffff;
+    display : block;
+    margin-top : 20px;
+    transition : 0.7s;
+  }
+  #menu_bar{
+
+    height : 110px;
+    width : 100%;
+    position : fixed;
+    bottom : -110px;
+    left : 0px;
+    background : #A9D0F5;
+    transition : 0.7s;
+  }
+  #menu_bar_tools{
+
+    height : 110px;
+    width : 120px;
+    position : fixed;
+
+
+  }
+  .menu_bar_tools .button1
+  {
+      display : inline-block;
+      position : absolute;
+      font-size : 36px;
+      color : #aaaaaa;
+      /*transition : 0.4s;*/
+  }
+  #color
+  {
+    left : 12px;
+  }
+  #width
+  {
+    left : 70px;
+  }
+  #tool
+  {
+    left : 12px;
+    top : 53px;
+  }
+  #owner
+  {
+    left :58px;
+    top : 53px;
+  }
+  .menu_bar_tools .button1:hover
+  {
+    color : #3498db;
+  }
+  #page_controls
+  {
+
+    height : 110px;
+    width : 1550px;
+    position : fixed;
+
+    left : 120px;
+  }
+  #btn_set
+  {
+    position : absolute;
+    height : 110px;
+    width : 75px;
+
+  }
+  .btn_plus {
+    text-align: center;
+    padding: 6px 12px;
+    font-size: 20px;
+    width: 60px;
+    height: 40%;
+    position: absolute;
+    left: 5px;
+    top: 5px;
+    -moz-box-shadow:inset 0px 1px 0px 0px #dcecfb;
+  	-webkit-box-shadow:inset 0px 1px 0px 0px #dcecfb;
+  	box-shadow:inset 0px 1px 0px 0px #dcecfb;
+  	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #bddcfa), color-stop(1, #80b5ea));
+  	background:-moz-linear-gradient(top, #bddcfa 5%, #80b5ea 100%);
+  	background:-webkit-linear-gradient(top, #bddcfa 5%, #80b5ea 100%);
+  	background:-o-linear-gradient(top, #bddcfa 5%, #80b5ea 100%);
+  	background:-ms-linear-gradient(top, #bddcfa 5%, #80b5ea 100%);
+  	background:linear-gradient(to bottom, #bddcfa 5%, #80b5ea 100%);
+  	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#bddcfa', endColorstr='#80b5ea',GradientType=0);
+  	background-color:#bddcfa;
+  	-moz-border-radius:6px;
+  	-webkit-border-radius:6px;
+  	border-radius:6px;
+  	border:1px solid #84bbf3;
+  	display:inline-block;
+  	cursor:pointer;
+  	color:#ffffff;
+  	font-family:Arial;
+  	font-size:15px;
+  	font-weight:bold;
+  	padding:6px 24px;
+  	text-decoration:none;
+  	text-shadow:0px 1px 0px #528ecc;
+  }
+  .btn_minus {
+    text-align: center;
+    padding: 6px 12px;
+    font-size: 20px;
+    width: 60px;
+    height: 40%;
+    position: absolute;
+    left: 5px;
+    bottom: 5px;
+    border : 0px;
+    -moz-box-shadow:inset 0px 1px 0px 0px #dcecfb;
+  	-webkit-box-shadow:inset 0px 1px 0px 0px #dcecfb;
+  	box-shadow:inset 0px 1px 0px 0px #dcecfb;
+  	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #bddcfa), color-stop(1, #80b5ea));
+  	background:-moz-linear-gradient(top, #bddcfa 5%, #80b5ea 100%);
+  	background:-webkit-linear-gradient(top, #bddcfa 5%, #80b5ea 100%);
+  	background:-o-linear-gradient(top, #bddcfa 5%, #80b5ea 100%);
+  	background:-ms-linear-gradient(top, #bddcfa 5%, #80b5ea 100%);
+  	background:linear-gradient(to bottom, #bddcfa 5%, #80b5ea 100%);
+  	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#bddcfa', endColorstr='#80b5ea',GradientType=0);
+  	background-color:#bddcfa;
+  	-moz-border-radius:6px;
+  	-webkit-border-radius:6px;
+  	border-radius:6px;
+  	border:1px solid #84bbf3;
+  	display:inline-block;
+  	cursor:pointer;
+  	color:#ffffff;
+  	font-family:Arial;
+  	font-size:15px;
+  	font-weight:bold;
+  	padding:6px 24px;
+  	text-decoration:none;
+  	text-shadow:0px 1px 0px #528ecc;
+  }
+  #stud_canvas_list{
+    position : absolute;
+    height : 110px;
+    width : 1470px;
+    left : 75px;
+    overflow-x : scroll;
+    overflow-y : hidden;
+    white-space: nowrap;
+  }
+
+  #division1{
+    display : block;
+    position : fixed;
+    bottom : -95px; left : 115px;
+    width : 1px; height : 80px;
+    border-left : 1px solid #aaaaaa;
+    content:'';
+
+  }
+  #division2{
+    display : block;
+    position : fixed;
+    bottom : -95px; left : 1670px;
+    width : 1px; height : 80px;
+    border-left : 1px solid #aaaaaa;
+    content:'';
+    z-index : 101;
+  }
+  #division3{
+    display : block;
+    position : fixed;
+    bottom : -95px; left : 1780px;
+    width : 1px; height : 80px;
+    border-left : 1px solid #aaaaaa;
+    content:'';
+    z-index : 101;
+  }
+
+
+  ::-webkit-scrollbar{
+      width :8px;
+
+  }
+  ::-webkit-scrollbar-thumb{
+    border-radius : 10px;
+    background-color:#a6a6a6;
+    box-shadow : inset 0 0 6px rgba(0,0,0,.3);
+  }
+  ::-webkit-scrollbar-track{
+    border-radius : 10px;
+    background-color:white;
+    box-shadow : inset 0 0 6px rgba(0,0,0,.3);
+  }
+
+
+  .stud_canvas_element {
+    width: 20%;
+    height: 90%;
+    margin : 2px;
+    background: white;
+    box-shadow: 2px 2px 2px rgba(0,0,0,0.2);
+  }
+
+  .selected {
+    border: 3px solid orange;
+  }
+  #function_btn{
+    position : fixed;
+    width : 110px;
+    height : 110px;
+
+
+    left : 1670px;
+  }
+  .start
+  {
+    background : #2E9AFE;
+    height : 40px;
+    width : 40px;
+    position : absolute;
+    top : 10px;
+    left : 10px;
+    margin : auto;
+    text-align : center;
+    border-radius : 50%;
+    cursor : pointer;
+    z-index : 100;
+  }
+  .start i
+  {
+      font-size : 20px;
+      color : #ffffff;
+      display : block;
+      margin-top : 10px;
+
+  }
+  .stop
+  {
+    background : #2E9AFE;
+    height : 40px;
+    width : 40px;
+    position : absolute;
+    top : 10px;
+    left : 10px;
+    margin : auto;
+    text-align : center;
+    border-radius : 50%;
+    cursor : pointer;
+    z-index : 99;
+
+  }
+  .stop i
+  {
+    font-size : 20px;
+    color : #ffffff;
+    display : block;
+    margin-top : 10px;
+  }
+  .cloudup
+  {
+    background : #2E9AFE;
+    height : 40px;
+    width : 40px;
+    position : absolute;
+    top : 10px;
+    left : 60px;
+    margin : auto;
+    text-align : center;
+    border-radius : 50%;
+    cursor : pointer;
+    z-index : 100;
+  }
+  .cloudup i
+  {
+      font-size : 20px;
+      color : #ffffff;
+      display : block;
+      margin-top : 10px;
+
+  }
+  .clouddown
+  {
+    background : #2E9AFE;
+    height : 40px;
+    width : 40px;
+    position : absolute;
+    top : 60px;
+    left : 60px;
+    margin : auto;
+    text-align : center;
+    border-radius : 50%;
+    cursor : pointer;
+    z-index : 100;
+  }
+  .clouddown i
+  {
+      font-size : 20px;
+      color : #ffffff;
+      display : block;
+      margin-top : 10px;
+
+  }
+  .question
+  {
+    background : #2E9AFE;
+    height : 40px;
+    width : 40px;
+    position : absolute;
+    top : 60px;
+    left : 10px;
+    margin : auto;
+    text-align : center;
+    border-radius : 50%;
+    cursor : pointer;
+    z-index : 100;
+  }
+  .question i
+  {
+      font-size : 20px;
+      color : #ffffff;
+      display : block;
+      margin-top : 10px;
+
+  }
+  #color, #width, #tool, #owner
+  {
+    transition: 0.7s;
+  }
+  #colors
+  {
+    height : 110px;
+    width : 120px;
+    position : fixed;
+    bottom : -110px;
+    transition : 0.7s;
+  }
+  .button2.black
+   { background-color: black; top : 20px; left : 10px;}
+  .button2.red
+   { background-color: red; top : 20px; left : 45px; }
+  .button2.green
+   { background-color: green; top : 20px; left : 80px; }
+  .button2.blue
+   { background-color: blue; top : 70px; left : 10px;}
+  .button2.yellow
+   { background-color: yellow; top : 70px; left : 45px;}
+
+  .button2 {
+    display: inline-block;
+    position : absolute;
+    height: 30px;
+    width: 30px;
+    border-radius : 50%;
+    box-shadow : inset 0 0 6px rgba(0,0,0,.9);
+  }
+  #backspace
+  {
+    height : 30px;
+    width : 30px;
+    position :absolute;
+    top : 70px;
+    left : 80px;
+    text-align : center;
+    border-radius : 50%;
+    cursor : pointer;
+
+  }
+  #backspace i
+  {
+    font-size : 30px;
+    color : #aaaaaa;
+
+  }
+  .colors .button2:hover
+  {
+    background-color : #3498db;
+  }
+  #widths
+  {
+    height : 110px;
+    width : 120px;
+    position : fixed;
+    bottom : -110px;
+    transition : 0.7s;
+  }
+  .widths .button3
+  {
+    display : inline-block;
+    position : absolute;
+    font-size : 30px;
+    color : black;
+  }
+  .widths .button3:nth-child(1)
+  {
+    top : 15px; left : 10px;
+  }
+  .widths .button3:nth-child(2)
+  {
+    top : 15px; left : 45px;
+  }
+  .widths .button3:nth-child(3)
+  {
+    top : 15px; left : 80px;
+  }
+  .widths .button3:nth-child(4)
+  {
+    top : 65px; left : 10px;
+  }
+  .widths .button3:nth-child(5)
+  {
+    top : 65px; left : 45px;
+  }
+  .widths .button3:hover, .tools .button4:hover, #backspace2 i:hover, #backspace i:hover, .owners .button5:hover
+  {
+    color : #3498db;
+  }
+  #tools
+  {
+    height : 110px;
+    width : 120px;
+    position : fixed;
+    bottom : -110px;
+    transition : 0.7s;
+
+  }
+  .tools .button4
+  {
+    display : inline-block;
+    position : absolute;
+    font-size : 30px;
+    color : black;
+  }
+  .tools .button4:nth-child(1)
+  {
+    top : 10px; left : 15px;
+  }
+  .tools .button4:nth-child(2)
+  {
+    top : 10px; left : 65px;
+  }
+  .tools .button4:nth-child(3)
+  {
+    top : 60px; left : 15px;
+  }
+  #backspace2
+  {
+    height : 30px;
+    width : 30px;
+    position :absolute;
+    top : 65px;
+    left : 70px;
+    text-align : center;
+    border-radius : 50%;
+    cursor : pointer;
+
+  }
+  #backspace2 i
+  {
+    font-size : 30px;
+    color : #aaaaaa;
+  }
+
+  #owners
+  {
+    height : 110px;
+    width : 120px;
+    position : fixed;
+    bottom : -110px;
+    transition : 0.7s;
+    background : #A9D0F5;
+  }
+  .owners .button5
+  {
+    display : inline-block;
+    position : absolute;
+    font-size : 30px;
+    color : black;
+  }
+  .owners .button5:nth-child(1)
+  {
+    top : 10px; left : 15px;
+  }
+  .owners .button5:nth-child(2)
+  {
+    top : 10px; left : 65px;
+  }
+
+  /**
+  #prof_page{
+    height: 20%;
+    width: 80%;
+    background: #ccc;
+    position: fixed;
+    left: 20px;
+    bottom: -300px;
+    display: flex;
+    justify-content: space-between;
+    border: solid;
+    transition: .7s
+  }
+  #prof_canvas_list{
+    display: flex;
+    width: 85%;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    z-index: 1;
+  }
+  .prof_canvas_element {
+    width: 20%;
+    height: 90%;
+    margin: 5px;
+    background: white;
+    box-shadow: 2px 2px 2px rgba(0,0,0,0.2);
+  }
+
+  #stud_page{
+    height: 20%;
+    width: 80%;
+    background: #ccc;
+    position: fixed;
+    left: 20px;
+    bottom: -300px;
+    display: flex;
+    justify-content: space-between;
+    border: solid;
+    transition: .7s
+  }
+  #stud_canvas_list{
+    display: flex;
+    width: 85%;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    z-index: 1;
+  }
+  **/
+}
